@@ -66,4 +66,16 @@ export const deleteAllProducts = async(req, res) => {
          res.status(500).json({ message: "delete all error", error });        
     }
 };
+export const editByIdProduct = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const update = await ProductServices.editById(id, req.body);
+        
+        if(!update) return res.status(404).json({message: "Product not found!"})
+        
+        res.json({message: "Product updated", update})
+    } catch (error) {
+         res.status(500).json({ message: "update by id error", error });
+    }
+}
 

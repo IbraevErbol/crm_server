@@ -25,3 +25,11 @@ export async function deleteById(id) {
 export async function deleteAllProduct() {
     return await Product.deleteMany({})
 }
+//Сервис изменения данных 
+export async function editById(id, data) {
+    return await Product.findByIdAndUpdate(
+        id,
+        data,
+        {new: true}
+    );
+}
