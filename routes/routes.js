@@ -1,5 +1,5 @@
 import express from "express"
-import {createProduct, getAllProducts, findProduct, deleteAllProducts, deleteProductById, editByIdProduct} from "../controllers/controllers.js"
+import {createProduct, getAllProducts, findProduct, deleteAllProducts, deleteProductById, editByIdProduct, createSale} from "../controllers/controllers.js"
 // import ItemServices from "../services/services.js"
 
 
@@ -18,6 +18,8 @@ router.get('/products/:id', findProduct);
 router.delete('/products', deleteAllProducts);
 router.delete('/products/:id', deleteProductById); 
 router.patch('/products/:id', editByIdProduct);
+
+router.post('/sales', createSale);
 
 router.get("/ping", (req, res) => {
     res.json({message: 'pong'});
