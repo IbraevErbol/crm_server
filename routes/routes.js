@@ -19,7 +19,7 @@ router.delete('/products', deleteAllProducts);
 router.delete('/products/:id', deleteProductById); 
 router.patch('/products/:id', editByIdProduct);
 
-router.post('/sales', createSale);
+router.post('/products/sales', createSale);
 
 router.get("/ping", (req, res) => {
     res.json({message: 'pong'});
